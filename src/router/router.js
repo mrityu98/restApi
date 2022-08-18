@@ -3,7 +3,7 @@ import Populations from '../models/schema.js';
 
 const router = new express.Router();
 
-router.get('/population',async (req,res)=>{
+router.get('/',async (req,res)=>{
     try{
         const responseObject = await Populations.find({},{'__v':false}).sort({Rank:1});
         res.send(responseObject);
@@ -15,7 +15,7 @@ router.get('/population',async (req,res)=>{
     
 })
 
-/* router.get('/population/:country',async (req,res)=>{
+/* router.get('/:country',async (req,res)=>{
     try{
         let key=req.params.country.toLowerCase();
         key=key.charAt(0).toUpperCase()+key.slice(1);
@@ -29,7 +29,7 @@ router.get('/population',async (req,res)=>{
     
 })*/
 
-router.get('/population/:rank',async (req,res)=>{
+router.get('/:rank',async (req,res)=>{
     
     try{
         if((req.params.rank<1) || (req.params.rank>209)){
@@ -45,7 +45,7 @@ router.get('/population/:rank',async (req,res)=>{
      } 
 })
 
-router.patch('/population/:rank',async (req,res)=>{
+router.patch('/:rank',async (req,res)=>{
 
     try{
         if((req.params.rank<1) || (req.params.rank>209)){
@@ -62,7 +62,7 @@ router.patch('/population/:rank',async (req,res)=>{
     
 })
 
-router.delete('/population/:rank',async (req,res)=>{
+router.delete('/:rank',async (req,res)=>{
     try{
         
         if((req.params.rank<1) || (req.params.rank>209)){
@@ -79,7 +79,7 @@ router.delete('/population/:rank',async (req,res)=>{
     
 })
 
-router.post('/population', async (req,res)=>{
+router.post('/', async (req,res)=>{
     try{
         
        const Country=new Populations(req.body);
