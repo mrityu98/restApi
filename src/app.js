@@ -17,6 +17,6 @@ app.use(cors())
 app.use(express.urlencoded({extended:true}))
 app.use(router);
 
-Connection(USER,PASSWORD);
+Connection(USER,PASSWORD); //Connect the server to the database
 
 app.listen(port,()=>{console.log(`Server running at port no. ${port}`)}); 

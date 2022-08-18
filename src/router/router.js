@@ -3,7 +3,8 @@ import Populations from '../models/schema.js';
 
 const router = new express.Router();
 
-router.get('/',async (req,res)=>{
+//get request
+router.get('/',async (req,res)=>{  
     try{
         const responseObject = await Populations.find({},{'__v':false}).sort({Rank:1});
         res.send(responseObject);
@@ -29,6 +30,7 @@ router.get('/',async (req,res)=>{
     
 })*/
 
+//get population by rank
 router.get('/:rank',async (req,res)=>{
     
     try{
@@ -45,6 +47,7 @@ router.get('/:rank',async (req,res)=>{
      } 
 })
 
+//update document by rank 
 router.patch('/:rank',async (req,res)=>{
 
     try{
@@ -62,6 +65,7 @@ router.patch('/:rank',async (req,res)=>{
     
 })
 
+//delete document by rank
 router.delete('/:rank',async (req,res)=>{
     try{
         
@@ -79,6 +83,7 @@ router.delete('/:rank',async (req,res)=>{
     
 })
 
+//create new document 
 router.post('/', async (req,res)=>{
     try{
         
@@ -93,6 +98,7 @@ router.post('/', async (req,res)=>{
     }
 })
 
+//invalid requests.....
 router.get('*',(req,res)=>{
     res.status(404).send('Invalid get request');
 })

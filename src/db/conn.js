@@ -1,5 +1,6 @@
 import mongoose from 'mongoose';
 
+//connect to the database
 const Connection = (username,password)=>{
      mongoose.connect(`mongodb+srv://${username}:${password}@rankings.uz0my6z.mongodb.net/?retryWrites=true&w=majority`,{
     useNewUrlParser:true,
