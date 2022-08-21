@@ -16,6 +16,9 @@ app.use(express.json());
 app.use(cors())
 app.use(router);
 
+app.get('/',(req,res)=>{
+    res.json("server is ok")
+})
 Connection(USER,PASSWORD); //Connect the server to the database
 
 app.listen(port,()=>{console.log(`Server running at port no. ${port}`)}); 
