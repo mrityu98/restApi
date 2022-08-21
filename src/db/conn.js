@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 
 //connect to the database
-const Connection = (username,password)=>{
+const connection = (username,password)=>{
      mongoose.connect(`mongodb+srv://${username}:${password}@rankings.uz0my6z.mongodb.net/?retryWrites=true&w=majority`,{
     useNewUrlParser:true,
     useUnifiedTopology:true
@@ -9,4 +9,4 @@ const Connection = (username,password)=>{
 }
 
 
-export default Connection; 
+export default connection; 
