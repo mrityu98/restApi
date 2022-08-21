@@ -14,7 +14,6 @@ const PASSWORD = process.env.DB_PASSWORD;
 
 app.use(express.json());
 app.use(cors())
-app.use(express.urlencoded({extended:true}))
 app.use(router);
 
 Connection(USER,PASSWORD); //Connect the server to the database
